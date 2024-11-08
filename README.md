@@ -1,4 +1,4 @@
-# Baogutang Frame Parent
+# baogutang frame parent
 
 Baogutang Frame Parent 是一个基于 Spring Boot 的项目框架，旨在提供高性能、可扩展的基础设施。
 

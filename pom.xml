@@ -12,7 +12,7 @@
 
     <groupId>com.baogutang.framework</groupId>
     <artifactId>baogutang-frame-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -88,32 +88,32 @@
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-auth</artifactId>
-                <version>${frame.auth.version}</version>
+                <version>${frame.release.auth.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-common</artifactId>
-                <version>${frame.common.version}</version>
+                <version>${frame.release.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-core</artifactId>
-                <version>${frame.core.version}</version>
+                <version>${frame.release.core.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-redis</artifactId>
-                <version>${frame.redis.version}</version>
+                <version>${frame.release.redis.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-uuid</artifactId>
-                <version>${frame.uuid.version}</version>
+                <version>${frame.release.uuid.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baogutang.framework</groupId>
                 <artifactId>frame-ons</artifactId>
-                <version>${frame.ons.version}</version>
+                <version>${frame.release.ons.version}</version>
             </dependency>
 
             <!--################################## Spring Boot cloud Jars ################################## -->
