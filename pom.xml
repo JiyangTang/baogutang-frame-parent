@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.2</version>
+    </parent>
+
+    <groupId>com.baogutang.framework</groupId>
+    <artifactId>baogutang-frame-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>frame-auth</module>
+        <module>frame-common</module>
+        <module>frame-redis</module>
+        <module>frame-core</module>
+        <module>frame-uuid</module>
+        <module>frame-ons</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- framework SNAPSHOT jar version -->
+        <frame.auth.version>1.0.0-SNAPSHOT</frame.auth.version>
+        <frame.common.version>1.0.0-SNAPSHOT</frame.common.version>
+        <frame.core.version>1.0.0-SNAPSHOT</frame.core.version>
+        <frame.redis.version>1.0.0-SNAPSHOT</frame.redis.version>
+        <frame.uuid.version>1.0.0-SNAPSHOT</frame.uuid.version>
+        <frame.ons.version>1.0.0-SNAPSHOT</frame.ons.version>
+
+        <!-- framework release jar version -->
+        <frame.release.auth.version>1.0.0</frame.release.auth.version>
+        <frame.release.common.version>1.0.0</frame.release.common.version>
+        <frame.release.core.version>1.0.0</frame.release.core.version>
+        <frame.release.redis.version>1.0.0</frame.release.redis.version>
+        <frame.release.uuid.version>1.0.0</frame.release.uuid.version>
+        <frame.release.ons.version>1.0.0</frame.release.ons.version>
+
+        <!--3th jar-->
+        <spring.boot.version>2.4.2</spring.boot.version>
+        <spring-cloud.version>2020.0.6</spring-cloud.version>
+        <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
+        <spring.cloud.starter.alibaba.config.version>2021.1</spring.cloud.starter.alibaba.config.version>
+        <spring.cloud.loadbalancer.version>3.1.8</spring.cloud.loadbalancer.version>
+        <mybatis.plus.boot.version>3.5.2</mybatis.plus.boot.version>
+        <mysql.connector.version>8.0.24</mysql.connector.version>
+        <druid.version>1.2.6</druid.version>
+        <knife4j.version>3.0.3</knife4j.version>
+        <xxl-job.versoin>2.3.0</xxl-job.versoin>
+        <netty-all.version>4.1.58.Final</netty-all.version>
+        <spring.integration.redis.version>5.2.4.RELEASE</spring.integration.redis.version>
+        <commons.pool2.version>2.10.0</commons.pool2.version>
+        <aliyun.oss.verson>3.8.1</aliyun.oss.verson>
+        <freemarker-version>2.3.28</freemarker-version>
+        <jwt.token.version>0.9.0</jwt.token.version>
+        <validation.version>2.3.2.RELEASE</validation.version>
+        <okhttp3.version>4.9.1</okhttp3.version>
+        <snakeyaml.version>1.26</snakeyaml.version>
+        <aliyun.log.version>0.1.13</aliyun.log.version>
+        <aliyun.sdk.core.version>4.1.1</aliyun.sdk.core.version>
+        <aliyun.sdk.green.version>3.6.5</aliyun.sdk.green.version>
+        <aliyun.sdk.ons.version>1.8.8.8.Final</aliyun.sdk.ons.version>
+        <aliyun.sms.version>1.0.4</aliyun.sms.version>
+
+        <commons-io.verson>2.7</commons-io.verson>
+        <redisson-version>3.13.6</redisson-version>
+        <pagehelper.version>1.4.3</pagehelper.version>
+        <postgresql.version>42.2.8</postgresql.version>
+        <guava.version>32.1.1-jre</guava.version>
+        <codehaus.janino.version>3.0.7</codehaus.janino.version>
+        <dynamic-datasource.version>3.4.1</dynamic-datasource.version>
+        <jasypt-spring-boot-starter.version>3.0.5</jasypt-spring-boot-starter.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--################################## flowcloud-framework jars ################################## -->
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-auth</artifactId>
+                <version>${frame.auth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-common</artifactId>
+                <version>${frame.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-core</artifactId>
+                <version>${frame.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-redis</artifactId>
+                <version>${frame.redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-uuid</artifactId>
+                <version>${frame.uuid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baogutang.framework</groupId>
+                <artifactId>frame-ons</artifactId>
+                <version>${frame.ons.version}</version>
+            </dependency>
+
+            <!--################################## Spring Boot cloud Jars ################################## -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- nacos 注册中心 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+                <version>${spring.cloud.loadbalancer.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!--nacos 配置中心-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring.cloud.starter.alibaba.config.version}</version>
+            </dependency>
+
+            <!--################################## 3th cloud Jars ################################## -->
+            <dependency>
+                <groupId>com.aliyun.openservices</groupId>
+                <artifactId>aliyun-log-logback-appender</artifactId>
+                <version>${aliyun.log.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.versoin}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-integration</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.integration</groupId>
+                <artifactId>spring-integration-redis</artifactId>
+                <version>${spring.integration.redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons.pool2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.oss.verson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.sdk.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-green</artifactId>
+                <version>${aliyun.sdk.green.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun.openservices</groupId>
+                <artifactId>ons-client</artifactId>
+                <version>${aliyun.sdk.ons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>dysmsapi20180501</artifactId>
+                <version>${aliyun.sms.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.token.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>${validation.version}</version>
+            </dependency>
+
+            <!-- httpClient -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+
+            <!-- httpClient -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+
+            <!--数据库驱动postgresSQL-->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>${codehaus.janino.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>11</source>
+                        <target>11</target>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
