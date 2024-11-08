@@ -1,4 +1,4 @@
-package com.baogutang.frame.core.utils;
+package com.baogutang.frame.common.response;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.ApiModel;
@@ -12,28 +12,34 @@ import java.util.List;
  * 分页工具类
  */
 @ApiModel(value = "分页结果数据", description = "分页结果数据")
-public class PageUtils<T> implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Pages<T> implements Serializable {
+
+    private static final long serialVersionUID = -4776072864343943792L;
+
     /**
      * 总记录数
      */
     @ApiModelProperty("总记录数")
     private int totalCount;
+
     /**
      * 每页记录数
      */
     @ApiModelProperty("每页记录数")
     private int pageSize;
+
     /**
      * 总页数
      */
     @ApiModelProperty("总页数")
     private int totalPage;
+
     /**
      * 当前页数
      */
     @ApiModelProperty("当前页数")
     private int currPage;
+
     /**
      * 列表数据
      */
@@ -43,7 +49,7 @@ public class PageUtils<T> implements Serializable {
     /**
      * 分页
      */
-    public PageUtils(IPage<T> page) {
+    public Pages(IPage<T> page) {
         this.list = page.getRecords();
         this.totalCount = (int) page.getTotal();
         this.pageSize = (int) page.getSize();
@@ -59,7 +65,7 @@ public class PageUtils<T> implements Serializable {
      * @param pageSize   每页记录数
      * @param currPage   当前页数
      */
-    public PageUtils(List<T> list, int totalCount, int pageSize, int currPage) {
+    public Pages(List<T> list, int totalCount, int pageSize, int currPage) {
         this.list = list;
         this.totalCount = totalCount;
         this.pageSize = pageSize;
@@ -68,12 +74,12 @@ public class PageUtils<T> implements Serializable {
     }
 
 
-    public PageUtils() {
+    public Pages() {
 
     }
 
-    public static <T> PageUtils<T> getPages(IPage<T> page) {
-        PageUtils<T> iPage = new PageUtils<>();
+    public static <T> Pages<T> getPages(IPage<T> page) {
+        Pages<T> iPage = new Pages<>();
         iPage.setList(page.getRecords());
         iPage.setTotalCount((int) page.getTotal());
         iPage.setCurrPage((int) page.getCurrent());
@@ -90,9 +96,9 @@ public class PageUtils<T> implements Serializable {
      * @param list     数据集
      * @return PageUtils<T>
      */
-    public PageUtils<T> getPages(Integer pageNum, Integer pageSize, List<T> list) {
+    public Pages<T> getPages(Integer pageNum, Integer pageSize, List<T> list) {
         int pages = list.size() % pageSize == 0 ? list.size() / pageSize : list.size() / pageSize + 1;
-        PageUtils<T> iPage = new PageUtils<>();
+        Pages<T> iPage = new Pages<>();
         iPage.setTotalCount(list.size());
         iPage.setCurrPage(pageNum);
         iPage.setTotalPage(pages);
