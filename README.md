@@ -2,6 +2,8 @@
 
 Baogutang Frame Parent 是一个基于 Spring Boot 的项目框架，旨在提供高性能、可扩展的基础设施。
 
+## JDK版本
+**11**
 ## 项目结构
 
 该项目的核心功能模块包括：
